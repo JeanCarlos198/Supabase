@@ -1,0 +1,20 @@
+create table datacenters (
+  id                   bigint generated always as identity primary key,
+  local_id             bigint not null,          
+  tabela_geral_id      bigint,                   
+  empresa              text not null,
+  tipo_de_datacenter   text,
+  consumo_de_agua      text,
+  temperatura_media    text,
+  tipo_de_resfriamento text,
+  fonte_de_energia     text,
+ 
+  constraint fk_datacenter_local
+    foreign key (local_id)
+    references locais (id),
+ 
+  constraint fk_datacenter_geral
+    foreign key (tabela_geral_id)
+    references tabela_geral (id)
+);
+ 

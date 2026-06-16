@@ -1,0 +1,8 @@
+create table locais (
+  id            bigint generated always as identity primary key,
+  continente    text not null,
+  pais          text not null,
+  codigo_pais   text,
+  cidade        text,
+  regiao        text
+);

@@ -1,0 +1,36 @@
+select
+  tg.empresa,
+  tg.ia_mais_utilizada,
+  tg.usuarios,
+  tg.interacoes_por_dia,
+  l.pais,
+  l.cidade,
+  l.continente
+from tabela_geral tg
+join locais l on tg.local_id = l.id;
+ 
+select
+  d.empresa,
+  d.tipo_de_datacenter,
+  d.fonte_de_energia,
+  d.consumo_de_agua,
+  l.pais,
+  l.cidade
+from datacenters d
+join locais l on d.local_id = l.id;
+ 
+select
+  l.continente,
+  l.pais,
+  l.cidade,
+  tg.ia_mais_utilizada,
+  tg.usuarios,
+  tg.interacoes_por_dia,
+  d.tipo_de_datacenter,
+  d.fonte_de_energia,
+  d.temperatura_media,
+  d.tipo_de_resfriamento
+from locais l
+join tabela_geral tg  on tg.local_id = l.id
+join datacenters  d   on d.tabela_geral_id = tg.id
+order by l.continente, l.pais;

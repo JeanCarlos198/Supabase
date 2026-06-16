@@ -1,0 +1,12 @@
+create table tabela_geral (
+  id                  bigint generated always as identity primary key,
+  local_id            bigint not null,          
+  ia_mais_utilizada   text,
+  empresa             text not null,
+  usuarios            numeric,
+  interacoes_por_dia  numeric,
+ 
+  constraint fk_tabela_geral_local
+    foreign key (local_id)
+    references locais (id)
+);

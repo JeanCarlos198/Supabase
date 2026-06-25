@@ -1,0 +1,15 @@
+create table copa_do_mundo (
+ id serial primary key not null,
+ selecao text,
+ valor_de_mercado int,
+ ranking_fifa int,
+ artilheiro text,
+ grupo_da_copa varchar(1)
+);
+-- Chave primaria: Identificador unico de uma tabela: essa informação não pode se repetir em nenhum momento --
+
+-- Chave estrangeira: chave primária que é referenciada de outra tabela --
+
+-- varchar: É um limitador da quantidade de caractéres, dentro dos parenteses é o valor que define o limite --
+
+-- Anotação pessoal: A principal diferença entre INT e BIGINT está na capacidade de armazenamento e no tamanho ocupado na memória. Enquanto o INT utiliza 4 bytes e suporta cerca de 4 bilhões de valores, o BIGINT utiliza 8 bytes e suporta números na casa dos quintilhões -- 
